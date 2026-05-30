@@ -1,0 +1,24 @@
+@BackEnd_HostAddress = http://localhost:5202
+
+GET {{BackEnd_HostAddress}}/api/invoices
+Accept: application/json
+
+###
+
+POST {{BackEnd_HostAddress}}/api/invoices
+Content-Type: application/json
+
+{
+  "invoiceNumber": "A-0001",
+  "invoiceDate": "2026-05-29",
+  "customerName": "Cliente de prueba",
+  "customerDocument": "20123456789",
+  "items": [
+    {
+      "description": "Servicio mensual",
+      "quantity": 1,
+      "unitPrice": 15000,
+      "vatRate": 21
+    }
+  ]
+}
